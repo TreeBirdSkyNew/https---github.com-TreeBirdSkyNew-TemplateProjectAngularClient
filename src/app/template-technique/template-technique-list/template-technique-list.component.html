@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="offset-10 col-md-2 mt-2"> <a [routerLink]="['/templateTechnique/create']">Create Technique</a> </div>
+  </div> <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>TemplateTechnique Id</th>
+              <th>TemplateTechnique Name</th>
+              <th>TemplateTechnique Title</th>
+              <th>Details</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let templateTechnique of templateTechniques">
+              <td>{{templateTechnique.templateTechniqueId}}</td>
+              <td>{{templateTechnique.templateTechniqueName}}</td>
+              <td>{{templateTechnique.templateTechniqueTitle}}</td>
+              <td><button type="button" id="details" class="btn btn-primary" 
+                (click)="getTechniqueDetails(templateTechnique.templateTechniqueId)">Details</button></td>
+              <td><button type="button" id="update" class="btn btn-success"
+                (click)="redirectToUpdatePage(templateTechnique.templateTechniqueId)">Update</button></td>
+                <td><button type="button" id="delete" class="btn btn-danger"
+                  (click)="redirectToDeletePage(templateTechnique.templateTechniqueId)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

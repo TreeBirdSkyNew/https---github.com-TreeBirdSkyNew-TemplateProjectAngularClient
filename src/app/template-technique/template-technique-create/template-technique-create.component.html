@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="createTechnique(ownerForm.value)">
+      <div class="card card-body bg-light mb-2 mt-2">
+   
+        <div class="row mb-3">
+            <label for="templateProjectId" class="col-form-label col-md-2">TemplateProjectId : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateProjectId" id="templateProjectId" class="form-control" />
+            </div>
+          </div>
+
+        <div class="row mb-3">
+          <label for="templateTechniqueName" class="col-form-label col-md-2">Name : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateTechniqueName" id="templateTechniqueName" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateTechniqueName') 
+            && hasError('templateTechniqueName', 'required')">Name is required</em>
+            <em *ngIf="validateControl('templateTechniqueName') 
+            && hasError('templateTechniqueName', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+        </div>
+   
+        <div class="row mb-3">
+            <label for="templateTechniqueTitle" class="col-form-label col-md-2">Title : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueTitle" id="templateTechniqueTitle" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueTitle') 
+              && hasError('templateTechniqueTitle', 'required')">Title is required</em>
+              <em *ngIf="validateControl('templateTechniqueTitle') 
+              && hasError('templateTechniqueTitle', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label for="templateTechniqueDescription" class="col-form-label col-md-2">Description : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueDescription" id="templateTechniqueDescription" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueDescription') 
+              && hasError('templateTechniqueDescription', 'required')">Description is required</em>
+              <em *ngIf="validateControl('templateTechniqueDescription') 
+              && hasError('templateTechniqueDescription', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+   
+        <div class="row mb-3">
+            <label for="templateTechniqueVersion" class="col-form-label col-md-2">Version : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueVersion" id="templateTechniqueVersion" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueVersion') 
+              && hasError('templateTechniqueVersion', 'required')">Version is required</em>
+              <em *ngIf="validateControl('templateTechniqueVersion') 
+              && hasError('templateTechniqueVersion', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="templateTechniqueVersionNET" class="col-form-label col-md-2">VersionNet : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueVersionNET" id="templateTechniqueVersionNET" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueVersionNET') 
+              && hasError('templateTechniqueVersionNET', 'required')">VersionNet is required</em>
+              <em *ngIf="validateControl('templateTechniqueVersionNET') 
+              && hasError('templateTechniqueVersionNET', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+
+        <br><br>
+   
+        <div class="mb-3 row">
+            <div class="offset-5 col-md-1">
+                <button type="submit" class="btn btn-info" [disabled]="!ownerForm.valid">Save</button>
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn btn-danger" (click)="redirectToTechniqueList()">Cancel</button>
+            </div>
+        </div>
+        
+      </div>
+    </form>
+  </div>

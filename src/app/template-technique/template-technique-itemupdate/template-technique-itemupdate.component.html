@@ -1,0 +1,82 @@
+<div class="container-fluid">
+    <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="updateTechniqueItem(ownerForm.value)">
+      <div class="card card-body bg-light mb-2 mt-2">
+   
+        <div class="row mb-3">
+          <label for="templateTechniqueItemName" class="col-form-label col-md-2">Name : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateTechniqueItemName" id="templateTechniqueItemName" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateTechniqueItemName') 
+            && hasError('templateTechniqueItemName', 'required')">Name is required</em>
+            <em *ngIf="validateControl('templateTechniqueItemName') 
+            && hasError('templateTechniqueItemName', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+        </div>
+   
+        <div class="row mb-3">
+            <label for="templateTechniqueItemTitle" class="col-form-label col-md-2">Title : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueItemTitle" id="templateTechniqueItemTitle" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueItemTitle') 
+              && hasError('templateTechniqueItemTitle', 'required')">Title is required</em>
+              <em *ngIf="validateControl('templateTechniqueItemTitle') 
+              && hasError('templateTechniqueItemTitle', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label for="templateTechniqueItemDescription" class="col-form-label col-md-2">Description : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueItemDescription" id="templateTechniqueItemDescription" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueItemDescription') 
+              && hasError('templateTechniqueItemDescription', 'required')">Description is required</em>
+              <em *ngIf="validateControl('templateTechniqueItemDescription') 
+              && hasError('templateTechniqueItemDescription', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+   
+        <div class="row mb-3">
+            <label for="templateTechniqueItemVersion" class="col-form-label col-md-2">Version : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateTechniqueItemVersion" id="templateTechniqueItemVersion" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateTechniqueItemVersion') 
+              && hasError('templateTechniqueItemVersion', 'required')">Version is required</em>
+              <em *ngIf="validateControl('templateTechniqueItemVersion') 
+              && hasError('templateTechniqueItemVersion', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="TemplateTechniqueItemVersionNET" class="col-form-label col-md-2">VersionNet : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="TemplateTechniqueItemVersionNET" id="TemplateTechniqueItemVersionNET" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('TemplateTechniqueItemVersionNET') 
+              && hasError('TemplateTechniqueItemVersionNET', 'required')">VersionNet is required</em>
+              <em *ngIf="validateControl('TemplateTechniqueItemVersionNET') 
+              && hasError('TemplateTechniqueItemVersionNET', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+        </div>
+
+        <br><br>
+<div class="mb-3 row">
+    <div class="offset-5 col-md-1">
+        <button type="submit" class="btn btn-info" [disabled]="!ownerForm.valid">Save</button>
+    </div>
+    <div class="col-md-1">
+        <button type="button" class="btn btn-danger" (click)="redirectToTemplateTechniqueList()">Cancel</button>
+    </div>
+</div>
+        
+      </div>
+    </form>
+  </div>

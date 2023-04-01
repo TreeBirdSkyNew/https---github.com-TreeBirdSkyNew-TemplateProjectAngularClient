@@ -1,0 +1,38 @@
+<div class="card card-body bg-light mb-2 mt-2">
+    <div class="row">
+      <div class="col-md-6">
+        <strong>templateTechniqueName:</strong>
+      </div>
+      <div class="col-md-6">
+        {{templateTechnique?.templateTechniqueName}}
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <strong>templateTechniqueDescription:</strong>
+        </div>
+        <div class="col-md-6">
+          {{templateTechnique?.templateTechniqueDescription}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <strong>templateTechniqueVersion:</strong>
+        </div>
+        <div class="col-md-6">
+          {{templateTechnique?.templateTechniqueVersion}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <strong>templateTechniqueVersionNet:</strong>
+        </div>
+        <div class="col-md-6">
+          {{templateTechnique?.templateTechniqueVersionNET}}
+        </div>
+    </div>
+</div>
+  
+<app-technique-items [listeTechniqueItem]="templateTechnique?.templateTechniqueItem">
+</app-technique-items>
+

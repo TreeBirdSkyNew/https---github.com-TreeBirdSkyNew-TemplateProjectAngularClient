@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 card card-body bg-light mb-2 mt-2">
+        <div class="row">
+            <div class="col-md-3">
+              <label for="name" class="control-label">TemplateProjectName :</label>
+            </div>
+            <div class="col-md-7">
+              <span name="name">
+                {{templateProject?.templateProjectName }}
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="dateOfBirth" class="control-label">TemplateProjectTitle:</label>
+            </div>
+            <div class="col-md-7">
+              <span name="dateOfBirth">
+                {{templateProject?.templateProjectTitle}}
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="address" class="control-label">TemplateProjectDescription :</label>
+            </div>
+            <div class="col-md-7">
+              <span name="address">
+                {{templateProject?.templateProjectDescription }}
+              </span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<div class="row">
+  <div class="offset-md-3 col-md-1">
+    <button type="submit" class="btn btn-info" (click)="deleteProject()">Delete</button>
+  </div>
+  <div class="col-md-1">
+    <button type="button" class="btn btn-danger" (click)="redirectToProjectList()">Cancel</button>
+  </div>
+</div>
+
