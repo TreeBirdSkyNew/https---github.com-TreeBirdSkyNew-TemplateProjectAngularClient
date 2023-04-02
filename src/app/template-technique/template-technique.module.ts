@@ -14,6 +14,8 @@ import { TemplateTechniqueDeleteComponent } from './template-technique-delete/te
 import { TechniqueItemsComponent } from './template-technique-details/technique-items/technique-items.component';
 import { TemplateTechniqueItemDetailsComponent } from './template-technique-itemdetails/template-technique-itemdetails.component';
 import { TemplateTechniqueItemupdateComponent } from './template-technique-itemupdate/template-technique-itemupdate.component';
+import { TemplateTechniqueItemdeleteComponent } from './template-technique-itemdelete/template-technique-itemdelete.component';
+import { TemplateTechniqueItemcreateComponent } from './template-technique-itemcreate/template-technique-itemcreate.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { TemplateTechniqueItemupdateComponent } from './template-technique-itemu
     TemplateTechniqueUpdateComponent,
     TemplateTechniqueDeleteComponent,
     TemplateTechniqueItemDetailsComponent,
-    TemplateTechniqueItemupdateComponent
+    TemplateTechniqueItemupdateComponent,
+    TemplateTechniqueItemdeleteComponent,
+    TemplateTechniqueItemcreateComponent
   ],
   imports: [
     CommonModule,

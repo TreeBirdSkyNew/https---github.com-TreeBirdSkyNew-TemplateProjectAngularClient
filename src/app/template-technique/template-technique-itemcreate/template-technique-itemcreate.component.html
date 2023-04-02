@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="updateTechniqueItem(ownerForm.value)">
+    <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="createTechniqueItem(ownerForm.value)">
       <div class="card card-body bg-light mb-2 mt-2">
    
         
@@ -15,6 +15,19 @@
             && hasError('templateTechniqueId', 'maxlength')">Maximum allowed length is 60 characters.</em>
           </div>
         </div>
+
+        <div class="row mb-3">
+            <label for="templateProjectId" class="col-form-label col-md-2">Name : </label>
+            <div class="col-md-5">
+              <input type="text" formControlName="templateProjectId" id="templateProjectId" class="form-control" />
+            </div>
+            <div class="col-md-5">
+              <em *ngIf="validateControl('templateProjectId') 
+              && hasError('templateProjectId', 'required')">Name is required</em>
+              <em *ngIf="validateControl('templateProjectId') 
+              && hasError('templateProjectId', 'maxlength')">Maximum allowed length is 60 characters.</em>
+            </div>
+          </div>
 
         <div class="row mb-3">
           <label for="templateTechniqueItemName" class="col-form-label col-md-2">Name : </label>
@@ -113,7 +126,7 @@
         <button type="submit" class="btn btn-info" [disabled]="!ownerForm.valid">Save</button>
     </div>
     <div class="col-md-1">
-        <button type="button" class="btn btn-danger" (click)="redirectToTemplateTechniqueList()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="redirectToTechniqueList()">Cancel</button>
     </div>
 </div>
         

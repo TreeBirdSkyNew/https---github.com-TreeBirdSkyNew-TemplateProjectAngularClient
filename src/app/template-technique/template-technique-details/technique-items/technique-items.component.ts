@@ -27,6 +27,9 @@ export class TechniqueItemsComponent implements OnInit {
     this.router.navigate([detailsUrl]); 
   }
 
-  
+  public getTechniqueItemDelete = (id) => { 
+    const detailsUrl: string = `/templateTechnique/itemdelete/${id}`; 
+    this.router.navigate([detailsUrl]); 
+  }
 
 }

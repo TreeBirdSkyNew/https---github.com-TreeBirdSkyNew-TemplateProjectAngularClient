@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 card card-body bg-light mb-2 mt-2">
+        <div class="row">
+            <div class="col-md-3">
+              <label for="name" class="control-label">TemplateProjectName :</label>
+            </div>
+            <div class="col-md-7">
+              <span name="name">
+                {{templateTechniqueItem?.templateTechniqueItemName }}
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="dateOfBirth" class="control-label">TemplateProjectTitle:</label>
+            </div>
+            <div class="col-md-7">
+              <span name="dateOfBirth">
+                {{templateTechniqueItem?.templateTechniqueItemTitle}}
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <label for="address" class="control-label">TemplateProjectDescription :</label>
+            </div>
+            <div class="col-md-7">
+              <span name="address">
+                {{templateTechniqueItem?.templateTechniqueItemDescription }}
+              </span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+<div class="row">
+  <div class="offset-md-3 col-md-1">
+    <button type="submit" class="btn btn-info" (click)="deleteTechniqueItem()">Delete</button>
+  </div>
+  <div class="col-md-1">
+    <button type="button" class="btn btn-danger" (click)="redirectToTechniqueList()">Cancel</button>
+  </div>
+</div>
+

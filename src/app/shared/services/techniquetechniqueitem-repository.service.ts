@@ -2,8 +2,8 @@ import { TemplateTechniqueItemVM } from '../../_interfaces/TemplateTechniqueItem
 import { EnvironmentUrlService } from './environment-url.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TemplateTechniqueVMForCreation } from 'src/app/_interfaces/TemplateTechniqueVMForCreation.model';
 import { TemplateTechniqueItemVMForUpdate } from 'src/app/_interfaces/TemplateTechniqueItemVMForUpdate.model';
+import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemplateTechniqueItemVMForCreation.model';
 
 
 @Injectable({
@@ -18,8 +18,8 @@ export class TechniquetechniqueItemRepositoryService {
   public getTechniqueItem = (route: string) => {
     return this.http.get<TemplateTechniqueItemVM>(this.createCompleteRoute(route, this.envUrl.urlTemplateTechniqueAddress));
   }
-  public createTechniqueItem = (route: string, owner: TemplateTechniqueItemVMForUpdate) => {
-    return this.http.post<TemplateTechniqueVMForCreation>(this.createCompleteRoute(route, this.envUrl.urlTemplateTechniqueAddress), owner, this.generateHeaders());
+  public createTechniqueItem = (route: string, owner: TemplateTechniqueItemVMForCreation) => {
+    return this.http.post<TemplateTechniqueItemVMForCreation>(this.createCompleteRoute(route, this.envUrl.urlTemplateTechniqueAddress), owner, this.generateHeaders());
   }
   public updateTechniqueItem = (route: string, owner: TemplateTechniqueItemVMForUpdate) => {
     return this.http.put(this.createCompleteRoute(route, this.envUrl.urlTemplateTechniqueAddress), owner, this.generateHeaders());

@@ -9,6 +9,9 @@ import { TemplateTechniqueDeleteComponent } from './template-technique-delete/te
 
 import { TemplateTechniqueItemDetailsComponent } from './template-technique-itemdetails/template-technique-itemdetails.component';
 import { TemplateTechniqueItemupdateComponent } from './template-technique-itemupdate/template-technique-itemupdate.component';
+import { TemplateTechniqueItemdeleteComponent } from './template-technique-itemdelete/template-technique-itemdelete.component';
+import { TemplateTechniqueItemcreateComponent } from './template-technique-itemcreate/template-technique-itemcreate.component';
+
 
 const routes: Routes = [
   { path:'list', component: TemplateTechniqueListComponent },
@@ -17,7 +20,9 @@ const routes: Routes = [
   { path: 'update/:id', component: TemplateTechniqueUpdateComponent },
   { path: 'delete/:id', component: TemplateTechniqueDeleteComponent },
   { path: 'itemdetails/:id', component: TemplateTechniqueItemDetailsComponent },
-  { path: 'itemupdate/:id', component: TemplateTechniqueItemupdateComponent }
+  { path: 'itemcreate', component: TemplateTechniqueItemcreateComponent },
+  { path: 'itemupdate/:id', component: TemplateTechniqueItemupdateComponent },
+  { path: 'itemdelete/:id', component: TemplateTechniqueItemdeleteComponent }
 ];
 
 @NgModule({

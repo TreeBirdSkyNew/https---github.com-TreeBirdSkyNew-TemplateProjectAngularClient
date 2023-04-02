@@ -31,11 +31,14 @@ export class TemplateTechniqueItemupdateComponent {
 
   ngOnInit(): void {
     this.ownerForm = new FormGroup({
+      templateTechniqueId: new FormControl('', [Validators.required]),      
       templateTechniqueItemName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueItemTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueItemDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueItemVersion: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueItemVersionNET: new FormControl('', [Validators.required, Validators.maxLength(60)])
+      templateTechniqueItemVersionNET: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      templateTechniqueInitialFile: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      templateTechniqueFinalContent: new FormControl('', [Validators.required, Validators.maxLength(60)]),
     });
     this.getTechniqueById();
   }
@@ -75,11 +78,14 @@ export class TemplateTechniqueItemupdateComponent {
 
   private executeTechniqueUpdate = (ownerFormValue) => {
     const ownerForUpd: TemplateTechniqueItemVMForUpdate = {
+    templateTechniqueId: ownerFormValue.templateTechniqueId,
     templateTechniqueItemName: ownerFormValue.templateTechniqueItemName,
     templateTechniqueItemTitle: ownerFormValue.templateTechniqueItemTitle,
     templateTechniqueItemDescription: ownerFormValue.templateTechniqueItemDescription,
     templateTechniqueItemVersion: ownerFormValue.templateTechniqueItemVersion,
-    templateTechniqueItemVersionNET: ownerFormValue.templateTechniqueItemVersionNET
+    templateTechniqueItemVersionNET: ownerFormValue.templateTechniqueItemVersionNET,
+    templateTechniqueInitialFile: ownerFormValue.templateTechniqueInitialFile,
+    templateTechniqueFinalContent: ownerFormValue.templateTechniqueFinalContent
     }
     const apiUri: string = `api/TemplateTechnique/EditTechniqueItem/${this.templateTechniqueItem.templateTechniqueItemId}`;
     this.repository.updateTechniqueItem(apiUri, ownerForUpd)

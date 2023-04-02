@@ -1,11 +1,12 @@
 export interface TemplateTechniqueItemVM{
     templateTechniqueItemId: BigInteger;
+    templateProjectId: BigInteger;
     templateTechniqueId: BigInteger;
     templateTechniqueItemName: string;
     templateTechniqueItemTitle: string;
     templateTechniqueItemDescription: string;
     templateTechniqueItemVersion?: string;
-    TemplateTechniqueItemVersionNET?: string;
+    templateTechniqueItemVersionNET?: string;
     templateTechniqueInitialFile?: string;
     templateTechniqueFinalContent?: string;
   }
