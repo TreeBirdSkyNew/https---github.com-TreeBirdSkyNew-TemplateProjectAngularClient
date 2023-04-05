@@ -1,14 +1,19 @@
 import { SuccessModalComponent } from './../../shared/modals/success-modal/success-modal.component';
 import { DatePipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
-import { TechniquetechniqueItemRepositoryService } from './../../shared/services/techniquetechniqueitem-repository.service';
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TemplateTechniqueItemVM } from 'src/app/_interfaces/TemplateTechniqueItemVM.model';
 import { HttpErrorResponse } from '@angular/common/http';
-import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemplateTechniqueItemVMForCreation.model';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+
+import { TechniquetechniqueItemRepositoryService } from './../../shared/services/techniquetechniqueitem-repository.service';
+import { TemplateTechniqueRepositoryService } from './../../shared/services/templatetechnique-repository.service';
+
+import { TemplateTechniqueVM } from 'src/app/_interfaces/TemplateTechniqueVM.model';
+import { TemplateTechniqueItemVM } from 'src/app/_interfaces/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemplateTechniqueItemVMForCreation.model';
 
 
 @Component({
@@ -22,23 +27,48 @@ export class TemplateTechniqueItemcreateComponent {
   ownerForm: FormGroup;
   bsModalRef?: BsModalRef;
   templateTechniqueItem: TemplateTechniqueItemVM;
+  templateTechnique: TemplateTechniqueVM;
+  paramTechniqueid: BigInteger;
+  paramProjectid: BigInteger;
   
-  constructor(private repository: TechniquetechniqueItemRepositoryService, private errorHandler: ErrorHandlerService,
-    private router: Router, private datePipe: DatePipe, private modal: BsModalService) { }
+  constructor(
+    private repository: TemplateTechniqueRepositoryService, 
+    private repositoryItem: TechniquetechniqueItemRepositoryService, 
+    private errorHandler: ErrorHandlerService,
+    private router: Router, 
+    private activeRoute: ActivatedRoute,
+    private datePipe: DatePipe, 
+    private modal: BsModalService) 
+    { }
   
     ngOnInit(): void {
-    this.ownerForm = new FormGroup({
-      templateTechniqueId: new FormControl('', [Validators.required]),    
-      templateProjectId: new FormControl('', [Validators.required]),    
-      templateTechniqueItemName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueItemTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueItemDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueItemVersion: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueItemVersionNET: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueInitialFile: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateTechniqueFinalContent: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-    });
-  }
+      this.ownerForm = new FormGroup({
+        templateTechniqueId: new FormControl('', [Validators.required]),     
+        templateProjectId: new FormControl('', [Validators.required]),   
+        templateTechniqueItemName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+        templateTechniqueItemTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+        templateTechniqueItemDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+        templateTechniqueItemVersion: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+        templateTechniqueItemVersionNET: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+        templateTechniqueInitialFile: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+        templateTechniqueFinalContent: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      });
+      this.getTechniqueById();
+    }
+    private getTechniqueById = () => {
+      const ownerId: string = this.activeRoute.snapshot.params['id'];
+      const ownerByIdUri: string =  `api/TemplateTechnique/TechniqueDetails/${ownerId}`;
+      this.repository.getTechnique(ownerByIdUri)
+      .subscribe({
+        next: (own: TemplateTechniqueVM) => {
+          this.templateTechnique = { ...own, 
+            
+          };
+          this.ownerForm.patchValue(this.templateTechnique);
+        },
+        error: (err: HttpErrorResponse) => this.errorHandler.handleError(err)
+      })
+    }
 
   validateControl = (controlName: string) => {
     if (this.ownerForm.get(controlName).invalid && this.ownerForm.get(controlName).touched)
@@ -59,9 +89,9 @@ export class TemplateTechniqueItemcreateComponent {
   }
 
   private executeTechniqueItemCreation = (ownerFormValue) => {
-    const templateTechniqueItem: TemplateTechniqueItemVMForCreation = {
-    templateTechniqueId: ownerFormValue.templateTechniqueId,
-    templateProjectId: ownerFormValue.templateProjectId,
+    const templateTechniqueItemForCreation: TemplateTechniqueItemVMForCreation = {
+    templateTechniqueId: this.templateTechnique.templateTechniqueId,
+    templateProjectId: this.templateTechnique.templateProjectId,
     templateTechniqueItemName: ownerFormValue.templateTechniqueItemName,
     templateTechniqueItemTitle: ownerFormValue.templateTechniqueItemTitle,
     templateTechniqueItemDescription: ownerFormValue.templateTechniqueItemDescription,
@@ -71,7 +101,7 @@ export class TemplateTechniqueItemcreateComponent {
     templateTechniqueFinalContent: ownerFormValue.templateTechniqueFinalContent
     }
     const apiUrl = 'api/TemplateTechnique/CreateTechniqueItem';
-    this.repository.createTechniqueItem(apiUrl, templateTechniqueItem)
+    this.repositoryItem.createTechniqueItem(apiUrl, templateTechniqueItemForCreation)
     .subscribe({
       next: (own: TemplateTechniqueItemVM) => {
         const config: ModalOptions = {

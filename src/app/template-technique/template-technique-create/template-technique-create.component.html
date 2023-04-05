@@ -1,16 +1,22 @@
 <div class="container-fluid">
     <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="createTechnique(ownerForm.value)">
       <div class="card card-body bg-light mb-2 mt-2">
-   
-        <div class="row mb-3">
-            <label for="templateProjectId" class="col-form-label col-md-2">TemplateProjectId : </label>
-            <div class="col-md-5">
-              <input type="text" formControlName="templateProjectId" id="templateProjectId" class="form-control" />
-            </div>
-          </div>
 
         <div class="row mb-3">
-          <label for="templateTechniqueName" class="col-form-label col-md-2">Name : </label>
+          <label for="templateProjectId" class="col-form-label col-md-2">templateProjectId : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateProjectId" id="templateProjectId" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateProjectId') 
+            && hasError('templateProjectId', 'required')">Name is required</em>
+            <em *ngIf="validateControl('templateProjectId') 
+            && hasError('templateProjectId', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="templateTechniqueName" class="col-form-label col-md-2">templateTechniqueName : </label>
           <div class="col-md-5">
             <input type="text" formControlName="templateTechniqueName" id="templateTechniqueName" class="form-control" />
           </div>

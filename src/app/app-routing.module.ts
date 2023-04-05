@@ -7,8 +7,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'templateProject', loadChildren: () => import('./template-Project/template-Project.module').then(m => m.TemplateProjectModule) },
+  { path: 'templateProject', loadChildren: () => import('./template-Project/template-project.module').then(m => m.TemplateProjectModule) },
   { path: 'templateTechnique', loadChildren: () => import('./template-technique/template-technique.module').then(m => m.TemplateTechniqueModule) },
+  { path: 'templateFunctional', loadChildren: () => import('./template-functional/template-functional.module').then(m => m.TemplateFunctionalModule) },
   { path: '404', component: NotFoundComponent },
   { path: '500', component: InternalServerComponent }, 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

@@ -24,6 +24,7 @@ export class TemplateTechniqueDetailsComponent {
   ngOnInit() {
     this.getTechniqueDetails()
   }
+  
   getTechniqueDetails = () => {
     const id: string = this.activeRoute.snapshot.params['id'];
     const apiUrl: string =  `api/TemplateTechnique/TechniqueDetails/${id}`;

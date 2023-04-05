@@ -31,5 +31,10 @@ export class TechniqueItemsComponent implements OnInit {
     const detailsUrl: string = `/templateTechnique/itemdelete/${id}`; 
     this.router.navigate([detailsUrl]); 
   }
+  public getTechniqueItemCreate = (id) => { 
+    const detailsUrl: string = `/templateTechnique/itemcreate/${id}`; 
+    this.router.navigate([detailsUrl]); 
+  }
+  
 
 }

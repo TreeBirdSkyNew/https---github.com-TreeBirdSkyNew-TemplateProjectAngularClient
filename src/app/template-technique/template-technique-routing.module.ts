@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'update/:id', component: TemplateTechniqueUpdateComponent },
   { path: 'delete/:id', component: TemplateTechniqueDeleteComponent },
   { path: 'itemdetails/:id', component: TemplateTechniqueItemDetailsComponent },
-  { path: 'itemcreate', component: TemplateTechniqueItemcreateComponent },
+  { path: 'itemcreate/:id', component: TemplateTechniqueItemcreateComponent },
   { path: 'itemupdate/:id', component: TemplateTechniqueItemupdateComponent },
   { path: 'itemdelete/:id', component: TemplateTechniqueItemdeleteComponent }
 ];

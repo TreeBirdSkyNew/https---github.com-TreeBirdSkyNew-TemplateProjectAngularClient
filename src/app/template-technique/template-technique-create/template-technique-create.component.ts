@@ -27,6 +27,7 @@ export class TemplateTechniqueCreateComponent {
   
     ngOnInit(): void {
     this.ownerForm = new FormGroup({
+      templateProjectId: new FormControl('', [Validators.required]),
       templateTechniqueName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),

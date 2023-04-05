@@ -1,3 +1,10 @@
+<div class="offset-10 col-md-2 mt-2"> 
+    <button type="button" id="details" class="btn btn-primary"
+        (click)="getTechniqueItemCreate(listeTechniqueItem[0].templateTechniqueItemId)">
+        Details
+    </button>
+</div>
+
 <div class="row">
 <div class="col-md-12">
     <div class="table-responsive">
@@ -25,11 +32,17 @@
             <td>{{templateItem?.templateTechniqueInitialFile}}</td>
             <td>{{templateItem?.templateTechniqueFinalContent}}</td>
             <td><button type="button" id="details" class="btn btn-primary"
-            (click)="getTechniqueItemDetails(templateItem.templateTechniqueItemId)">Details</button></td>
-                <td><button type="button" id="update" class="btn btn-success"
-                (click)="getTechniqueItemUpdate(templateItem.templateTechniqueItemId)">Update</button></td>
-                  <td><button type="button" id="delete" class="btn btn-danger"
-                  (click)="getTechniqueItemDelete(templateItem.templateTechniqueItemId)">Delete</button></td>
+                (click)="getTechniqueItemDetails(templateItem.templateTechniqueItemId)">
+                Details
+            </button></td>
+            <td><button type="button" id="update" class="btn btn-success"
+                (click)="getTechniqueItemUpdate(templateItem.templateTechniqueItemId)">
+                Update
+            </button></td>
+            <td><button type="button" id="delete" class="btn btn-danger"
+                (click)="getTechniqueItemDelete(templateItem.templateTechniqueItemId)">
+                Delete
+            </button></td>
         </tr>
         </tbody>
     </table>
