@@ -9,8 +9,8 @@ import { DatePipe } from '@angular/common';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SuccessModalComponent } from 'src/app/shared/modals/success-modal/success-modal.component';
 
-import { TemplateTechniqueVM } from './../../_interfaces/TemplateTechniqueVM.model';
-import { TemplateTechniqueVMForUpdate } from './../../_interfaces/TemplateTechniqueVMForUpdate.model';
+import { TemplateTechniqueVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVM.model';
+import { TemplateTechniqueVMForUpdate } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVMForUpdate.model';
 import { TemplateTechniqueRepositoryService } from 'src/app/shared/services/templatetechnique-repository.service';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TemplateProjectVMForUpdate } from './../../_interfaces/TemplateProjectVMForUpdate.Model';
+import { TemplateProjectVMForUpdate } from '../../_interfaces/TemplateProject/TemplateProjectVMForUpdate.Model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TemplateProjectVM } from './../../_interfaces/TemplateProjectVM.model';
+import { TemplateProjectVM } from '../../_interfaces/TemplateProject/TemplateProjectVM.model';
 import { TemplateProjectRepositoryService } from 'src/app/shared/services/templateproject-repository.service';
 import { ErrorHandlerService } from 'src/app/shared/services/error-handler.service';
 import { ActivatedRoute, Router } from '@angular/router';

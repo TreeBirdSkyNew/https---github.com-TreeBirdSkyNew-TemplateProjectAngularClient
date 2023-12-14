@@ -6,8 +6,8 @@ import { TemplateProjectRepositoryService } from './../../shared/services/templa
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TemplateProjectVM } from '../../_interfaces/TemplateProjectVM.model';
-import { TemplateProjectVMForCreation } from '../../_interfaces/TemplateProjectVMForCreation.model';
+import { TemplateProjectVM } from '../../_interfaces/TemplateProject/TemplateProjectVM.model';
+import { TemplateProjectVMForCreation } from '../../_interfaces/TemplateProject/TemplateProjectVMForCreation.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 

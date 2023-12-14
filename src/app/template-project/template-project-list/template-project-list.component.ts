@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 
-import { TemplateProjectVM } from '../../_interfaces/TemplateProjectVM.model';
+import { TemplateProjectVM } from '../../_interfaces/TemplateProject/TemplateProjectVM.model';
 import { TemplateProjectRepositoryService } from './../../shared/services/templateproject-repository.service';
 
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { TemplateTechniqueItemVM } from './../../../_interfaces/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueItemVM } from '../../../_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
 import { Router } from '@angular/router';
 
 @Component({

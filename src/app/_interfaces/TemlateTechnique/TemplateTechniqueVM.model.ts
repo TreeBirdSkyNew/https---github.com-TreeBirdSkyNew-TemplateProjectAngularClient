@@ -1,4 +1,4 @@
-import { TemplateTechniqueItemVM } from "./TemplateTechniqueItemVM.model";
+import { TemplateTechniqueItemVM } from "./TemplateTechniqueItem/TemplateTechniqueItemVM.model";
 
 export interface TemplateTechniqueVM{
     templateTechniqueId: BigInteger;

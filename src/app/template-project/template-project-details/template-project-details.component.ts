@@ -3,7 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
 
-import { TemplateProjectVM } from '../../_interfaces/TemplateProjectVM.model';
+import { TemplateProjectVM } from '../../_interfaces/TemplateProject/TemplateProjectVM.model';
 import { TemplateProjectRepositoryService } from './../../shared/services/templateproject-repository.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { TemplateTechniqueVM } from './../../_interfaces/TemplateTechniqueVM.model';
+import { TemplateTechniqueVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVM.model';
 import { TemplateTechniqueRepositoryService } from '../../shared/services/templatetechnique-repository.service';
 
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';

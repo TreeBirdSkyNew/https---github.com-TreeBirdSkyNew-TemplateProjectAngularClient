@@ -4,8 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { TemplateTechniqueRepositoryService } from '../../shared/services/templatetechnique-repository.service';
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
 
-import { TemplateTechniqueItemVM } from './../../_interfaces/TemplateTechniqueItemVM.model';
-import { TemplateTechniqueVM } from './../../_interfaces/TemplateTechniqueVM.model';
+import { TemplateTechniqueItemVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVM.model';
 
 @Component({
   selector: 'app-template-technique-details',

@@ -9,8 +9,7 @@ import { TemplateProjectVMForUpdate } from 'src/app/_interfaces/TemplateProject/
 @Injectable({
   providedIn: 'root'
 })
-
-export class TemplateProjectRepositoryService {
+export class TemplateFunctionalRepositoryService {
   constructor(private http: HttpClient, private envUrl: EnvironmentUrlService) { }
   public getProjects = (route: string) => {
     return this.http.get<TemplateProjectVM[]>(this.createCompleteRoute(route, this.envUrl.urlTemplateProjectAddress));
@@ -36,3 +35,4 @@ export class TemplateProjectRepositoryService {
     }
   }
 }
+

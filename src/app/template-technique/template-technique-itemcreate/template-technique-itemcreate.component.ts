@@ -5,9 +5,9 @@ import { ErrorHandlerService } from './../../shared/services/error-handler.servi
 import { TechniquetechniqueItemRepositoryService } from './../../shared/services/techniquetechniqueitem-repository.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TemplateTechniqueItemVM } from 'src/app/_interfaces/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueItemVM } from 'src/app/_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
 import { HttpErrorResponse } from '@angular/common/http';
-import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemplateTechniqueItemVMForCreation.model';
+import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVMForCreation.model';
 import { ModalOptions, BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 

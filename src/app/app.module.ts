@@ -19,6 +19,7 @@ import { InternalServerComponent } from './error-pages/internal-server/internal-
 
 import { DatePipe } from '@angular/common';
 import { TemplateTechniqueModule } from './template-technique/template-technique.module';
+import { TemplateFunctionalModule } from './template-functional/template-functional.module';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TemplateTechniqueModule } from './template-technique/template-technique
     HttpClientModule,
     CollapseModule.forRoot(),
     TemplateProjectModule,
-    TemplateTechniqueModule
+    TemplateTechniqueModule,
+    TemplateFunctionalModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
