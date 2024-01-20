@@ -5,8 +5,8 @@ import { TemplateTechniqueRepositoryService } from '../../shared/services/templa
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { TemplateTechniqueItemVM } from './../../_interfaces/TemplateTechniqueItemVM.model';
-import { TemplateTechniqueVM } from './../../_interfaces/TemplateTechniqueVM.model';
+import { TemplateTechniqueItemVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVM.model';
 
 
 @Component({

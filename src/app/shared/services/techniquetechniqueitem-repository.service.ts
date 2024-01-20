@@ -1,9 +1,9 @@
-import { TemplateTechniqueItemVM } from '../../_interfaces/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueItemVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
 import { EnvironmentUrlService } from './environment-url.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { TemplateTechniqueItemVMForUpdate } from 'src/app/_interfaces/TemplateTechniqueItemVMForUpdate.model';
-import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemplateTechniqueItemVMForCreation.model';
+import { TemplateTechniqueItemVMForUpdate } from 'src/app/_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVMForUpdate.model';
+import { TemplateTechniqueItemVMForCreation } from 'src/app/_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVMForCreation.model';
 
 
 @Injectable({

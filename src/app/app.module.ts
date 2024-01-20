@@ -19,7 +19,6 @@ import { TemplateTechniqueModule } from './template-technique/template-technique
 import { TemplateFunctionalModule } from './template-functional/template-functional.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

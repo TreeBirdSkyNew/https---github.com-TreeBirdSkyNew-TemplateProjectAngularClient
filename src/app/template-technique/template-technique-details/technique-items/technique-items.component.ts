@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-import { TemplateTechniqueItemVM } from './../../../_interfaces/TemplateTechniqueItemVM.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TemplateTechniqueItemVM } from '../../../_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
+
 
 @Component({
   selector: 'app-technique-items',

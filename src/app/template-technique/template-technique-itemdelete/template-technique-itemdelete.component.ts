@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
 import { TechniquetechniqueItemRepositoryService } from './../../shared/services/techniquetechniqueitem-repository.service';
-import { TemplateTechniqueItemVM } from './../../_interfaces/TemplateTechniqueItemVM.model';
+import { TemplateTechniqueItemVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueItem/TemplateTechniqueItemVM.model';
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef, ModalOptions, BsModalService } from 'ngx-bootstrap/modal';
 import { SuccessModalComponent } from 'src/app/shared/modals/success-modal/success-modal.component';
