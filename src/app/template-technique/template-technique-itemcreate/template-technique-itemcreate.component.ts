@@ -44,7 +44,6 @@ export class TemplateTechniqueItemcreateComponent {
     ngOnInit(): void {
       this.ownerForm = new FormGroup({
         templateTechniqueId: new FormControl('', [Validators.required]),     
-        templateProjectId: new FormControl('', [Validators.required]),   
         templateTechniqueItemName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
         templateTechniqueItemTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
         templateTechniqueItemDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
@@ -91,7 +90,6 @@ export class TemplateTechniqueItemcreateComponent {
   private executeTechniqueItemCreation = (ownerFormValue) => {
     const templateTechniqueItemForCreation: TemplateTechniqueItemVMForCreation = {
     templateTechniqueId: this.templateTechnique.templateTechniqueId,
-    templateProjectId: this.templateTechnique.templateProjectId,
     templateTechniqueItemName: ownerFormValue.templateTechniqueItemName,
     templateTechniqueItemTitle: ownerFormValue.templateTechniqueItemTitle,
     templateTechniqueItemDescription: ownerFormValue.templateTechniqueItemDescription,

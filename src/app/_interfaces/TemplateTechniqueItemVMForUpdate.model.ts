@@ -4,7 +4,7 @@ export interface TemplateTechniqueItemVMForUpdate{
     templateTechniqueItemTitle: string;
     templateTechniqueItemDescription: string;
     templateTechniqueItemVersion?: string;
-    templateTechniqueItemVersionNET?: string;
+    templateTechniqueItemVersionNet?: string;
     templateTechniqueInitialFile?: string;
     templateTechniqueFinalContent?: string;
   }

@@ -1,37 +1,99 @@
-<div class="card card-body bg-light mb-2 mt-2">
-    <div class="row">
-      <div class="col-md-6">
-        <strong>templateTechniqueName:</strong>
+<form [formGroup]="techniqueDetailsForm" autocomplete="off" >
+  <div class="container-fluid">
+    <div class="card card-body bg-light mb-2 mt-2">
+
+      <div class="row mb-3">
+        <label for="templateTechniqueId" class="col-form-label col-md-2">Id : </label>
+        <div class="col-md-5">
+          <input type="text" 
+            formControlName="templateTechniqueId" 
+            id="templateTechniqueId" 
+            class="form-control" 
+            [(ngModel)]="templateTechnique.templateTechniqueId"/>
+        </div>
       </div>
-      <div class="col-md-6">
-        {{templateTechnique?.templateTechniqueName}}
+
+      <div class="row mb-3">
+        <label for="templateTechniqueName" class="col-form-label col-md-2">Name : </label>
+        <div class="col-md-5">
+          <input type="text" 
+            formControlName="templateTechniqueName" 
+            id="templateTechniqueName" 
+            class="form-control" 
+            [(ngModel)]="templateTechnique.templateTechniqueName"/>
+        </div>
       </div>
+  
+      <div class="row mb-3">
+          <label for="templateTechniqueTitle" class="col-form-label col-md-2">Title : </label>
+          <div class="col-md-5">
+            <input type="text" 
+              formControlName="templateTechniqueTitle" 
+              id="templateTechniqueTitle" 
+              class="form-control" 
+              [(ngModel)]="templateTechnique.templateTechniqueTitle"/>
+          </div>
+      </div>
+      
+      <div class="row mb-3">
+          <label for="templateTechniqueDescription" class="col-form-label col-md-2">Description : </label>
+          <div class="col-md-5">
+            <input type="text" 
+              formControlName="templateTechniqueDescription" 
+              id="templateTechniqueDescription" 
+              class="form-control" 
+              [(ngModel)]="templateTechnique.templateTechniqueDescription"/>
+          </div>
+      </div>
+  
+      <div class="row mb-3">
+          <label for="templateTechniqueVersion" class="col-form-label col-md-2">Version : </label>
+          <div class="col-md-5">
+            <input type="text" 
+              formControlName="templateTechniqueVersion" 
+              id="templateTechniqueVersion" 
+              class="form-control" 
+              [(ngModel)]="templateTechnique.templateTechniqueVersion"/>
+          </div>
+      </div>
+  
+      <div class="row mb-3">
+          <label for="templateTechniqueVersionNet" class="col-form-label col-md-2">VersionNet : </label>
+          <div class="col-md-5">
+            <input type="text" 
+              formControlName="templateTechniqueVersionNet" 
+              id="templateTechniqueVersionNet" 
+              class="form-control" 
+              [(ngModel)]="templateTechnique.templateTechniqueVersionNet"/>
+          </div>
+      </div>
+  
+      <div class="row">
+        <editor
+          [init]="{
+            height: 500,
+            menubar: false,
+            plugins: [
+              'advlist autolink lists link image charmap print preview anchor',
+              'searchreplace visualblocks code fullscreen',
+              'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar:
+              'undo redo | formatselect | bold italic backcolor | \
+              alignleft aligncenter alignright alignjustify | \
+              bullist numlist outdent indent | removeformat | help'
+          }"
+        ></editor>
+      </div>
+  
+      <br><br>
+  
     </div>
-    <div class="row">
-        <div class="col-md-6">
-          <strong>templateTechniqueDescription:</strong>
-        </div>
-        <div class="col-md-6">
-          {{templateTechnique?.templateTechniqueDescription}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-          <strong>templateTechniqueVersion:</strong>
-        </div>
-        <div class="col-md-6">
-          {{templateTechnique?.templateTechniqueVersion}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-          <strong>templateTechniqueVersionNet:</strong>
-        </div>
-        <div class="col-md-6">
-          {{templateTechnique?.templateTechniqueVersionNET}}
-        </div>
-    </div>
-</div>
+  </div>
+  </form>
+  
+    
+  
   
 <app-technique-items [listeTechniqueItem]="templateTechnique?.templateTechniqueItem">
 </app-technique-items>

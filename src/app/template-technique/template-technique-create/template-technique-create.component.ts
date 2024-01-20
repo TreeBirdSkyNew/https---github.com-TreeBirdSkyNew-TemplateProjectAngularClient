@@ -61,7 +61,7 @@ export class TemplateTechniqueCreateComponent {
       templateTechniqueTitle: ownerFormValue.templateTechniqueTitle,
       templateTechniqueDescription: ownerFormValue.templateTechniqueDescription,
       templateTechniqueVersion: ownerFormValue.templateTechniqueVersion,
-      templateTechniqueVersionNET: ownerFormValue.templateTechniqueVersionNET,
+      templateTechniqueVersionNet: ownerFormValue.templateTechniqueVersionNET,
     }
     const apiUrl = 'api/TemplateTechnique/CreateTechnique';
     this.repository.createTechnique(apiUrl, templateTechnique)

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TemplateProjectRoutingModule } from './template-project-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 import { TemplateProjectListComponent } from './template-project-list/template-project-list.component';
 import { TemplateProjectDetailsComponent } from './template-project-details/template-project-details.component';
@@ -23,7 +24,8 @@ import { TemplateProjectDeleteComponent } from './template-project-delete/templa
     CommonModule,
     TemplateProjectRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EditorModule
   ]
 })
 export class TemplateProjectModule { }

@@ -3,9 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TemplateTechniqueRepositoryService } from '../../shared/services/templatetechnique-repository.service';
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { TemplateTechniqueItemVM } from './../../_interfaces/TemplateTechniqueItemVM.model';
 import { TemplateTechniqueVM } from './../../_interfaces/TemplateTechniqueVM.model';
+
 
 @Component({
   selector: 'app-template-technique-details',
@@ -17,6 +19,7 @@ export class TemplateTechniqueDetailsComponent {
 
   templateTechnique: TemplateTechniqueVM;
   errorMessage: string = '';
+  techniqueDetailsForm: FormGroup;
   
   constructor(private repository: TemplateTechniqueRepositoryService, private router: Router, 
               private activeRoute: ActivatedRoute, private errorHandler: ErrorHandlerService) { }
@@ -39,5 +42,13 @@ export class TemplateTechniqueDetailsComponent {
         this.errorMessage = this.errorHandler.errorMessage;
       }
     })
+    this.techniqueDetailsForm = new FormGroup({
+      templateTechniqueId: new FormControl('', [Validators.required]),
+      templateTechniqueName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      templateTechniqueTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      templateTechniqueDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      templateTechniqueVersion: new FormControl('', [Validators.required, Validators.maxLength(60)]),
+      templateTechniqueVersionNet: new FormControl('', [Validators.required, Validators.maxLength(60)])
+    });
   }
 }

@@ -27,9 +27,9 @@ export class TemplateProjectDeleteComponent implements OnInit {
     }
 
     private getProjectById = () => {
-      const ownerId: string = this.activeRoute.snapshot.params['id'];
-      const apiUri: string = `api/TemplateProject/ProjectDetails?id=${ownerId}`;
-      this.repository.getProject(apiUri)
+      const id: string = this.activeRoute.snapshot.params['id'];
+      const apiUrl: string = 'api/TemplateProject/ProjectDetails/'+id.toString();
+      this.repository.getProject(apiUrl)
       .subscribe({
         next: (own: TemplateProjectVM) => this.templateProject = own,
         error: (err: HttpErrorResponse) => this.errorHandler.handleError(err)
@@ -40,8 +40,9 @@ export class TemplateProjectDeleteComponent implements OnInit {
     }
 
     deleteProject = () => {
-      const deleteUri: string = `api/TemplateProject/Delete?id=${this.templateProject.templateProjectId}`;
-      this.repository.deleteProject(deleteUri)
+      const id: string = this.activeRoute.snapshot.params['id'];
+      const apiUrl: string = 'api/TemplateProject/Delete/'+id.toString();
+      this.repository.deleteProject(apiUrl)
       .subscribe({
         next: (_) => {
           const config: ModalOptions = {

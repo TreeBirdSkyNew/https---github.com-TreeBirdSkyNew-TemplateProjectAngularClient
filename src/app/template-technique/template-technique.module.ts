@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 import { TemplateTechniqueRoutingModule } from './template-technique-routing.module';
 import { TemplateTechniqueListComponent } from './template-technique-list/template-technique-list.component';
 import { TemplateTechniqueDetailsComponent } from './template-technique-details/template-technique-details.component';
@@ -35,7 +37,8 @@ import { TemplateTechniqueItemcreateComponent } from './template-technique-itemc
     CommonModule,
     TemplateTechniqueRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EditorModule
   ]
 })
 export class TemplateTechniqueModule { }

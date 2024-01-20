@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-internal-server',
   templateUrl: './internal-server.component.html',

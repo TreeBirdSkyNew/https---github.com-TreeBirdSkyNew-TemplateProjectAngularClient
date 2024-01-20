@@ -5,5 +5,5 @@ export interface TemplateTechniqueVMForCreation{
     templateTechniqueTitle: string;
     templateTechniqueDescription: string;
     templateTechniqueVersion: string;
-    templateTechniqueVersionNET: string;
+    templateTechniqueVersionNet: string;
 }

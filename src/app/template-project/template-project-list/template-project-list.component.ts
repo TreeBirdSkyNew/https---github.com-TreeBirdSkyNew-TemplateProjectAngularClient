@@ -39,6 +39,7 @@ export class TemplateProjectListComponent implements OnInit {
   }
 
   public getTemplateProjectDetails = (id) => { 
+    debugger;
     const detailsUrl: string = `/templateProject/details/${id}`; 
     this.router.navigate([detailsUrl]); 
   }

@@ -30,6 +30,8 @@ export class TemplateTechniqueUpdateComponent {
 
   ngOnInit(): void {
     this.ownerForm = new FormGroup({
+      templateTechniqueId: new FormControl('', [Validators.required]),
+      templateProjectId: new FormControl('', [Validators.required]),
       templateTechniqueName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
@@ -73,12 +75,14 @@ export class TemplateTechniqueUpdateComponent {
   }
 
   private executeTechniqueUpdate = (ownerFormValue) => {
-    const ownerForUpd: TemplateTechniqueVMForUpdate = {
+    const ownerForUpd: TemplateTechniqueVM = {
+    templateTechniqueId: ownerFormValue.templateTechniqueId,
+    templateProjectId: ownerFormValue.templateProjectId,
     templateTechniqueName: ownerFormValue.templateTechniqueName,
     templateTechniqueTitle: ownerFormValue.templateTechniqueTitle,
     templateTechniqueDescription: ownerFormValue.templateTechniqueDescription,
     templateTechniqueVersion: ownerFormValue.templateTechniqueVersion,
-    templateTechniqueVersionNET: ownerFormValue.templateTechniqueVersionNET
+    templateTechniqueVersionNet: ownerFormValue.templateTechniqueVersionNET
     }
     const apiUri: string = `api/TemplateTechnique/EditTechnique/${this.templateTechnique.templateTechniqueId}`;
     this.repository.updateTechnique(apiUri, ownerForUpd)

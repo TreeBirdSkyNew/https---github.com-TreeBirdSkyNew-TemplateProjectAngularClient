@@ -7,6 +7,6 @@ export interface TemplateTechniqueVM{
     templateTechniqueTitle: string;
     templateTechniqueDescription: string;
     templateTechniqueVersion: string;
-    templateTechniqueVersionNET: string;
+    templateTechniqueVersionNet: string;
     templateTechniqueItem?: TemplateTechniqueItemVM[];
   }

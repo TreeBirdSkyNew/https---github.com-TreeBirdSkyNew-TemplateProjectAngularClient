@@ -1,7 +1,8 @@
 export interface TemplateProjectVMForUpdate{
+    templateProjectId: number;
     templateProjectName: string;
     templateProjectTitle: string;
     templateProjectDescription: string;
     templateProjectVersion: string;
-    templateProjectVersionNET: string;
+    templateProjectVersionNet: string;
   }

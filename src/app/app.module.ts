@@ -11,15 +11,13 @@ import { NotFoundComponent } from './error-pages/not-found/not-found.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { HttpClientModule } from '@angular/common/http';
 
-import { EnvironmentUrlService } from './shared/services/environment-url.service';
-import { TemplateProjectRepositoryService } from './shared/services/templateproject-repository.service';
-
 import { TemplateProjectModule } from './template-project/template-project.module';
 import { InternalServerComponent } from './error-pages/internal-server/internal-server.component';
 
 import { DatePipe } from '@angular/common';
 import { TemplateTechniqueModule } from './template-technique/template-technique.module';
 import { TemplateFunctionalModule } from './template-functional/template-functional.module';
+
 
 
 @NgModule({

@@ -2,6 +2,18 @@
     <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="updateTechniqueItem(ownerForm.value)">
       <div class="card card-body bg-light mb-2 mt-2">
    
+        <div class="row mb-3">
+          <label for="templateTechniqueItemId" class="col-form-label col-md-2">Id : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateTechniqueItemId" id="templateTechniqueItemId" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateTechniqueItemId') 
+            && hasError('templateTechniqueItemId', 'required')">Name is required</em>
+            <em *ngIf="validateControl('templateTechniqueId') 
+            && hasError('templateTechniqueItemId', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+        </div>
         
         <div class="row mb-3">
           <label for="templateTechniqueId" class="col-form-label col-md-2">Name : </label>

@@ -31,6 +31,7 @@ export class TemplateTechniqueItemupdateComponent {
 
   ngOnInit(): void {
     this.ownerForm = new FormGroup({
+      templateTechniqueItemId: new FormControl('', [Validators.required]),   
       templateTechniqueId: new FormControl('', [Validators.required]),      
       templateTechniqueItemName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateTechniqueItemTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
@@ -77,7 +78,8 @@ export class TemplateTechniqueItemupdateComponent {
   }
 
   private executeTechniqueUpdate = (ownerFormValue) => {
-    const ownerForUpd: TemplateTechniqueItemVMForUpdate = {
+    const ownerForUpd: TemplateTechniqueItemVM = {
+    templateTechniqueItemId: ownerFormValue.templateTechniqueItemId,
     templateTechniqueId: ownerFormValue.templateTechniqueId,
     templateTechniqueItemName: ownerFormValue.templateTechniqueItemName,
     templateTechniqueItemTitle: ownerFormValue.templateTechniqueItemTitle,

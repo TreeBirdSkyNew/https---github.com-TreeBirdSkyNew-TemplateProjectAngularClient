@@ -27,18 +27,20 @@ export class TemplateProjectUpdateComponent {
 
     ngOnInit(): void {
       this.ownerForm = new FormGroup({
+      templateProjectId: new FormControl('', [Validators.required]),
       templateProjectName: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateProjectTitle: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateProjectDescription: new FormControl('', [Validators.required, Validators.maxLength(60)]),
       templateProjectVersion: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      templateProjectVersionNET: new FormControl('', [Validators.required, Validators.maxLength(60)])
+      templateProjectVersionNet: new FormControl('', [Validators.required, Validators.maxLength(60)])
        });
       this.getTemplateProjectById();
     }
     private getTemplateProjectById = () => {
-      const ownerId: string = this.activeRoute.snapshot.params['id'];
-      const ownerByIdUri: string = `api/TemplateProject/ProjectDetails?id=${ownerId}`;
-      this.repository.getProject(ownerByIdUri)
+      const id: string = this.activeRoute.snapshot.params['id'];
+      const apiUrl: string = 'api/TemplateProject/ProjectDetails/'+id.toString();
+  
+      this.repository.getProject(apiUrl)
       .subscribe({
         next: (own: TemplateProjectVM) => {
           this.templateProject = { ...own, 
@@ -70,15 +72,17 @@ export class TemplateProjectUpdateComponent {
     }
 
     private executeProjectUpdate = (ownerFormValue) => {
-      const ownerForUpd: TemplateProjectVMForUpdate = {
+      const projectForUpdate: TemplateProjectVMForUpdate = {
+      templateProjectId: ownerFormValue.templateProjectId,
       templateProjectName: ownerFormValue.templateProjectName,
       templateProjectTitle: ownerFormValue.templateProjectTitle,
       templateProjectDescription: ownerFormValue.templateProjectDescription,
       templateProjectVersion: ownerFormValue.templateProjectVersion,
-      templateProjectVersionNET: ownerFormValue.templateProjectVersionNET
+      templateProjectVersionNet: ownerFormValue.templateProjectVersionNet
       }
-      const apiUri: string = `api/TemplateProject/Edit?id=${this.templateProject.templateProjectId}`;
-      this.repository.updateProject(apiUri, ownerForUpd)
+      const id: string = this.activeRoute.snapshot.params['id'];
+      const apiUrl: string = 'api/TemplateProject/Edit/'+id.toString();
+      this.repository.updateProject(apiUrl, projectForUpdate)
       .subscribe({
         next: (_) => {
           const config: ModalOptions = {

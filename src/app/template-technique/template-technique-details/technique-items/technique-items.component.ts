@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { TemplateTechniqueItemVM } from './../../../_interfaces/TemplateTechniqueItemVM.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-technique-items',
@@ -12,8 +12,8 @@ export class TechniqueItemsComponent implements OnInit {
 
   @Input() listeTechniqueItem: TemplateTechniqueItemVM[];
   
-  constructor(private router: Router) { }
-  
+  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
+
   ngOnInit(): void {
   }
 
@@ -31,7 +31,8 @@ export class TechniqueItemsComponent implements OnInit {
     const detailsUrl: string = `/templateTechnique/itemdelete/${id}`; 
     this.router.navigate([detailsUrl]); 
   }
-  public getTechniqueItemCreate = (id) => { 
+  public getTechniqueItemCreate = () => { 
+    const id: string = this.activeRoute.snapshot.params['id'];
     const detailsUrl: string = `/templateTechnique/itemcreate/${id}`; 
     this.router.navigate([detailsUrl]); 
   }
