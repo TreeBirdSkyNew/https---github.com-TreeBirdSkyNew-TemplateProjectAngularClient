@@ -6,5 +6,6 @@ import { Injectable } from '@angular/core';
 export class EnvironmentUrlService {
   urlTemplateProjectAddress: string = environment.urlTemplateProjectAddress;
   urlTemplateTechniqueAddress: string = environment.urlTemplateTechniqueAddress;
+  urlTemplateResultAddress: string = environment.urlTemplateResultAddress;
   constructor() { }
 }

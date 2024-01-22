@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'templateProject', loadChildren: () => import('./template-Project/template-project.module').then(m => m.TemplateProjectModule) },
   { path: 'templateTechnique', loadChildren: () => import('./template-technique/template-technique.module').then(m => m.TemplateTechniqueModule) },
-  { path: 'templateFunctional', loadChildren: () => import('./template-functional/template-functional.module').then(m => m.TemplateFunctionalModule) },
+  { path: 'templateResult', loadChildren: () => import('./template-result/template-result.module').then(m => m.TemplateResultModule) },
   { path: '404', component: NotFoundComponent },
   { path: '500', component: InternalServerComponent }, 
   { path: '', redirectTo: '/home', pathMatch: 'full' },

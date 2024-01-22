@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { TemplateTechniqueVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVM.model';
-import { TemplateTechniqueRepositoryService } from '../../shared/services/templatetechnique-repository.service';
-
 import { ErrorHandlerService } from './../../shared/services/error-handler.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+
+import { TemplateTechniqueVM } from '../../_interfaces/TemlateTechnique/TemplateTechniqueVM.model';
+import { TemplateTechniqueRepositoryService } from '../../shared/services/templatetechnique-repository.service';
 
 
 @Component({
@@ -17,18 +17,20 @@ export class TemplateTechniqueListComponent {
   
   templateTechniques: TemplateTechniqueVM[];
   
-  constructor(private repository: TemplateTechniqueRepositoryService, private errorHandler: ErrorHandlerService,
-    private router: Router) { }
+  constructor(private repository: TemplateTechniqueRepositoryService, 
+    private errorHandler: ErrorHandlerService,
+    private router: Router) 
+    { }
   
   ngOnInit(): void {
-    this.getAllOwners();
+    this.getAlltemplateTechniques();
   }
   
-  private getAllOwners = () => {
+  private getAlltemplateTechniques = () => {
     const apiAddress: string = 'api/TemplateTechnique/Index';
     this.repository.getTechniques(apiAddress)
-    .subscribe(own => {
-      this.templateTechniques = own;
+    .subscribe(technique => {
+      this.templateTechniques = technique;
     })
   }
 

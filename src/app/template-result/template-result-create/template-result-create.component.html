@@ -1,0 +1,96 @@
+<div class="container-fluid">
+  <form [formGroup]="ownerForm" autocomplete="off" novalidate (ngSubmit)="createResult(ownerForm.value)">
+    <div class="card card-body bg-light mb-2 mt-2">
+ 
+      <div class="row mb-3">
+        <label for="templateProjectId" class="col-form-label col-md-2">templateProjectId : </label>
+        <div class="col-md-5">
+          <input type="text" formControlName="templateProjectId" id="templateProjectId" class="form-control" />
+        </div>
+        <div class="col-md-5">
+          <em *ngIf="validateControl('templateProjectId') 
+          && hasError('templateProjectId', 'required')">Name is required</em>
+          <em *ngIf="validateControl('templateProjectId') 
+          && hasError('templateProjectId', 'maxlength')">Maximum allowed length is 60 characters.</em>
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <label for="templateResultName" class="col-form-label col-md-2">Name : </label>
+        <div class="col-md-5">
+          <input type="text" formControlName="templateResultName" id="templateResultName" class="form-control" />
+        </div>
+        <div class="col-md-5">
+          <em *ngIf="validateControl('templateResultName') 
+          && hasError('templateResultName', 'required')">Name is required</em>
+          <em *ngIf="validateControl('templateResultName') 
+          && hasError('templateResultName', 'maxlength')">Maximum allowed length is 60 characters.</em>
+        </div>
+      </div>
+ 
+      <div class="row mb-3">
+          <label for="templateResultTitle" class="col-form-label col-md-2">Title : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateResultTitle" id="templateResultTitle" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateResultTitle') 
+            && hasError('templateResultTitle', 'required')">Title is required</em>
+            <em *ngIf="validateControl('templateResultTitle') 
+            && hasError('templateResultTitle', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+      </div>
+      
+      <div class="row mb-3">
+          <label for="templateResultDescription" class="col-form-label col-md-2">Description : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateResultDescription" id="templateResultDescription" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateResultDescription') 
+            && hasError('templateResultDescription', 'required')">Description is required</em>
+            <em *ngIf="validateControl('templateResultDescription') 
+            && hasError('templateResultDescription', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+      </div>
+ 
+      <div class="row mb-3">
+          <label for="templateResultVersion" class="col-form-label col-md-2">Version : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateResultVersion" id="templateResultVersion" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateResultVersion') 
+            && hasError('templateResultVersion', 'required')">Version is required</em>
+            <em *ngIf="validateControl('templateResultVersion') 
+            && hasError('templateResultVersion', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+      </div>
+
+      <div class="row mb-3">
+          <label for="templateResultVersionNet" class="col-form-label col-md-2">VersionNet : </label>
+          <div class="col-md-5">
+            <input type="text" formControlName="templateResultVersionNet" id="templateResultVersionNet" class="form-control" />
+          </div>
+          <div class="col-md-5">
+            <em *ngIf="validateControl('templateProjectVersionNet') 
+            && hasError('templateResultVersionNet', 'required')">VersionNet is required</em>
+            <em *ngIf="validateControl('templateResultVersionNet') 
+            && hasError('templateResultVersionNet', 'maxlength')">Maximum allowed length is 60 characters.</em>
+          </div>
+      </div>
+
+      <br><br>
+ 
+      <div class="mb-3 row">
+          <div class="offset-5 col-md-1">
+              <button type="submit" class="btn btn-info" [disabled]="!ownerForm.valid">Save</button>
+          </div>
+          <div class="col-md-1">
+              <button type="button" class="btn btn-danger" (click)="redirectToexecuteResultCreationList()">Cancel</button>
+          </div>
+      </div>
+      
+    </div>
+  </form>
+</div>
